@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-08-06T18:42:19.798015+00:00",
+  "score_psi": 0.008123603974177966,
+  "score_psi_status": "OK",
+  "worst_feature": "initial_list_status",
+  "worst_feature_psi": 0.37135966595415276,
+  "worst_feature_status": "ALERT",
+  "calibration_ece_raw": 0.21346903321476665,
+  "calibration_ece_after_recalibration": 0.006093754632931903,
+  "calibration_status": "ALERT"
+}

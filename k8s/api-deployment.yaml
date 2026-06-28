@@ -1,0 +1,61 @@
+# NOTE on the image: `credit-risk:latest` is built locally by `docker compose
+# build` / `docker build .` and isn't pushed to any registry. `imagePullPolicy:
+# Never` tells the kubelet to use whatever image already exists on the node
+# rather than trying (and failing) to pull it. For a real cluster, build/push
+# to a real registry (e.g. `ghcr.io/<you>/credit-risk:v1.0.0`), reference that
+# tag here, and switch to `imagePullPolicy: IfNotPresent`.
+#
+# For local testing with kind:   kind load docker-image credit-risk:latest
+# For local testing with minikube: minikube image load credit-risk:latest
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: credit-risk-api
+  namespace: credit-risk
+  labels:
+    app: credit-risk-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: credit-risk-api
+  template:
+    metadata:
+      labels:
+        app: credit-risk-api
+    spec:
+      containers:
+        - name: api
+          image: credit-risk:latest
+          imagePullPolicy: Never
+          command: ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: credit-risk-config
+          env:
+            - name: CREDIT_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: credit-risk-secrets
+                  key: CREDIT_API_KEY
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "1000m"
+              memory: "1Gi"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 20

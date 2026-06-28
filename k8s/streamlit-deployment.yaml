@@ -1,0 +1,53 @@
+# replicas is pinned at 1 deliberately: Streamlit keeps session/widget state
+# server-side per connection, so scaling this past 1 replica behind a
+# load balancer without sticky sessions (session affinity) would randomly
+# bounce a user between instances and silently lose their in-progress form
+# state. Fixing that properly needs session-affinity configured on the
+# Service/Ingress, which isn't set up here -- treat multi-replica Streamlit
+# as a separate problem to solve, not a one-line replica count change.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: credit-risk-streamlit
+  namespace: credit-risk
+  labels:
+    app: credit-risk-streamlit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: credit-risk-streamlit
+  template:
+    metadata:
+      labels:
+        app: credit-risk-streamlit
+    spec:
+      containers:
+        - name: streamlit
+          image: credit-risk:latest
+          imagePullPolicy: Never
+          command: ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=8501"]
+          ports:
+            - containerPort: 8501
+          envFrom:
+            - configMapRef:
+                name: credit-risk-config
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "1000m"
+              memory: "1Gi"
+          readinessProbe:
+            httpGet:
+              path: /_stcore/health
+              port: 8501
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /_stcore/health
+              port: 8501
+            initialDelaySeconds: 20
+            periodSeconds: 20

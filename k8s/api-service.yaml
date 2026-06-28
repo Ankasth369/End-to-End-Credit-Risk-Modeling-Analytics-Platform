@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: credit-risk-api
+  namespace: credit-risk
+spec:
+  selector:
+    app: credit-risk-api
+  ports:
+    - port: 8000
+      targetPort: 8000
+  type: ClusterIP

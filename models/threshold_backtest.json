@@ -1,0 +1,366 @@
+{
+  "description": "Backtest of PD-score decision threshold vs approve-all baseline, on 2016-2017 holdout (actual realized outcomes). Revenue is a simplified proxy: undiscounted installment interest, sub_grade-imputed rate, no cost of capital or prepayment modeling.",
+  "n_loans": 462426,
+  "baseline_approve_all": {
+    "net_profit": 100616383.97850299,
+    "default_rate": 0.23229878942793009,
+    "approval_rate": 1.0
+  },
+  "optimal_threshold": {
+    "threshold": 0.6,
+    "net_profit": 279304809.2008632,
+    "approved_default_rate": 0.1644355082050925,
+    "approval_rate": 0.745338713653644,
+    "n_rejected": 117762
+  },
+  "vs_baseline": {
+    "profit_improvement_usd": 178688425.2223602,
+    "profit_improvement_pct": 177.5937657037422,
+    "default_rate_reduction_pp": 6.7863281222837575
+  },
+  "full_sweep": [
+    {
+      "threshold": 0.02,
+      "net_profit": 62878.58276802008,
+      "approval_rate": 0.00014705055511584557,
+      "approved_default_rate": 0.014705882352941176,
+      "n_rejected": 462358
+    },
+    {
+      "threshold": 0.04,
+      "net_profit": 2466150.8219760456,
+      "approval_rate": 0.004647230043293414,
+      "approved_default_rate": 0.01209865053513262,
+      "n_rejected": 460277
+    },
+    {
+      "threshold": 0.06,
+      "net_profit": 8478979.771511527,
+      "approval_rate": 0.015195944864691864,
+      "approved_default_rate": 0.014942365162942934,
+      "n_rejected": 455399
+    },
+    {
+      "threshold": 0.08,
+      "net_profit": 16539372.892712161,
+      "approval_rate": 0.029096547339466206,
+      "approved_default_rate": 0.018208844295800816,
+      "n_rejected": 448971
+    },
+    {
+      "threshold": 0.1,
+      "net_profit": 24933416.882229287,
+      "approval_rate": 0.044980169800140996,
+      "approved_default_rate": 0.02341346153846154,
+      "n_rejected": 441626
+    },
+    {
+      "threshold": 0.12,
+      "net_profit": 34382852.831910275,
+      "approval_rate": 0.06220022230583921,
+      "approved_default_rate": 0.028056878628793937,
+      "n_rejected": 433663
+    },
+    {
+      "threshold": 0.14,
+      "net_profit": 42930420.60971951,
+      "approval_rate": 0.08062695436675274,
+      "approved_default_rate": 0.034947966956335154,
+      "n_rejected": 425142
+    },
+    {
+      "threshold": 0.16,
+      "net_profit": 53481375.90309248,
+      "approval_rate": 0.1003209162114587,
+      "approved_default_rate": 0.03886529714815374,
+      "n_rejected": 416035
+    },
+    {
+      "threshold": 0.18,
+      "net_profit": 63775015.281715065,
+      "approval_rate": 0.12108099458075454,
+      "approved_default_rate": 0.04388205247271883,
+      "n_rejected": 406435
+    },
+    {
+      "threshold": 0.2,
+      "net_profit": 75231034.86995274,
+      "approval_rate": 0.14400790612984565,
+      "approved_default_rate": 0.04893907768083733,
+      "n_rejected": 395833
+    },
+    {
+      "threshold": 0.22,
+      "net_profit": 86386589.58777109,
+      "approval_rate": 0.16814149723415206,
+      "approved_default_rate": 0.054660270343266495,
+      "n_rejected": 384673
+    },
+    {
+      "threshold": 0.24,
+      "net_profit": 98828305.82726248,
+      "approval_rate": 0.19375856893859775,
+      "approved_default_rate": 0.059543075257536354,
+      "n_rejected": 372827
+    },
+    {
+      "threshold": 0.26,
+      "net_profit": 111509486.7804893,
+      "approval_rate": 0.22122458512280885,
+      "approved_default_rate": 0.06527859237536657,
+      "n_rejected": 360126
+    },
+    {
+      "threshold": 0.28,
+      "net_profit": 124784684.15858904,
+      "approval_rate": 0.24998810620510092,
+      "approved_default_rate": 0.07119315576854872,
+      "n_rejected": 346825
+    },
+    {
+      "threshold": 0.3,
+      "net_profit": 138459635.53937495,
+      "approval_rate": 0.27906302846293246,
+      "approved_default_rate": 0.07653859863924492,
+      "n_rejected": 333380
+    },
+    {
+      "threshold": 0.32,
+      "net_profit": 152198895.25390038,
+      "approval_rate": 0.3092581299494406,
+      "approved_default_rate": 0.08251228943632918,
+      "n_rejected": 319417
+    },
+    {
+      "threshold": 0.34,
+      "net_profit": 165851556.04306874,
+      "approval_rate": 0.34022740935847035,
+      "approved_default_rate": 0.08830483696688489,
+      "n_rejected": 305096
+    },
+    {
+      "threshold": 0.36,
+      "net_profit": 180321531.84066108,
+      "approval_rate": 0.3717654284144923,
+      "approved_default_rate": 0.09391905254953058,
+      "n_rejected": 290512
+    },
+    {
+      "threshold": 0.38,
+      "net_profit": 192880137.12990737,
+      "approval_rate": 0.4034613105664474,
+      "approved_default_rate": 0.09986010687620263,
+      "n_rejected": 275855
+    },
+    {
+      "threshold": 0.4,
+      "net_profit": 204931049.70360023,
+      "approval_rate": 0.43559185685925966,
+      "approved_default_rate": 0.10612672455306833,
+      "n_rejected": 260997
+    },
+    {
+      "threshold": 0.42,
+      "net_profit": 216748329.4414038,
+      "approval_rate": 0.4673915394030613,
+      "approved_default_rate": 0.11187041372481886,
+      "n_rejected": 246292
+    },
+    {
+      "threshold": 0.44,
+      "net_profit": 228556167.0458455,
+      "approval_rate": 0.4998702495101919,
+      "approved_default_rate": 0.11769693666099942,
+      "n_rejected": 231273
+    },
+    {
+      "threshold": 0.46,
+      "net_profit": 239423181.89534652,
+      "approval_rate": 0.5319575456397347,
+      "approved_default_rate": 0.12348012732173129,
+      "n_rejected": 216435
+    },
+    {
+      "threshold": 0.48,
+      "net_profit": 248821717.2053616,
+      "approval_rate": 0.5639280663284504,
+      "approved_default_rate": 0.12938356821014285,
+      "n_rejected": 201651
+    },
+    {
+      "threshold": 0.5,
+      "net_profit": 256943069.4963953,
+      "approval_rate": 0.5954358102701838,
+      "approved_default_rate": 0.13521218834553014,
+      "n_rejected": 187081
+    },
+    {
+      "threshold": 0.52,
+      "net_profit": 264873964.07799917,
+      "approval_rate": 0.6266602656425028,
+      "approved_default_rate": 0.14089114650912404,
+      "n_rejected": 172642
+    },
+    {
+      "threshold": 0.54,
+      "net_profit": 271107603.11138386,
+      "approval_rate": 0.657530069676013,
+      "approved_default_rate": 0.14665903656856072,
+      "n_rejected": 158367
+    },
+    {
+      "threshold": 0.56,
+      "net_profit": 275077780.2331871,
+      "approval_rate": 0.688038734846224,
+      "approved_default_rate": 0.15288512007844937,
+      "n_rejected": 144259
+    },
+    {
+      "threshold": 0.58,
+      "net_profit": 279111668.0317186,
+      "approval_rate": 0.7167979309121892,
+      "approved_default_rate": 0.15843857288530347,
+      "n_rejected": 130960
+    },
+    {
+      "threshold": 0.6,
+      "net_profit": 279304809.2008632,
+      "approval_rate": 0.745338713653644,
+      "approved_default_rate": 0.1644355082050925,
+      "n_rejected": 117762
+    },
+    {
+      "threshold": 0.62,
+      "net_profit": 277460659.809901,
+      "approval_rate": 0.7723246530255652,
+      "approved_default_rate": 0.1700271319891472,
+      "n_rejected": 105283
+    },
+    {
+      "threshold": 0.64,
+      "net_profit": 273946103.00116515,
+      "approval_rate": 0.7979590247953186,
+      "approved_default_rate": 0.1756599647151603,
+      "n_rejected": 93429
+    },
+    {
+      "threshold": 0.66,
+      "net_profit": 270616322.67461336,
+      "approval_rate": 0.8228257061670408,
+      "approved_default_rate": 0.18110571464614608,
+      "n_rejected": 81930
+    },
+    {
+      "threshold": 0.68,
+      "net_profit": 265677317.88689733,
+      "approval_rate": 0.8457331551426607,
+      "approved_default_rate": 0.18636934303956387,
+      "n_rejected": 71337
+    },
+    {
+      "threshold": 0.7,
+      "net_profit": 259879360.49216592,
+      "approval_rate": 0.8670143979793524,
+      "approved_default_rate": 0.19136507619784002,
+      "n_rejected": 61496
+    },
+    {
+      "threshold": 0.72,
+      "net_profit": 250615386.4127897,
+      "approval_rate": 0.8872597994057427,
+      "approved_default_rate": 0.19638452614235716,
+      "n_rejected": 52134
+    },
+    {
+      "threshold": 0.74,
+      "net_profit": 241174157.00746107,
+      "approval_rate": 0.9059417074299455,
+      "approved_default_rate": 0.20109278138882059,
+      "n_rejected": 43495
+    },
+    {
+      "threshold": 0.76,
+      "net_profit": 228736315.60685205,
+      "approval_rate": 0.9235445238805776,
+      "approved_default_rate": 0.2058510177464637,
+      "n_rejected": 35355
+    },
+    {
+      "threshold": 0.78,
+      "net_profit": 214572810.4393407,
+      "approval_rate": 0.9393459710310407,
+      "approved_default_rate": 0.2104181150979101,
+      "n_rejected": 28048
+    },
+    {
+      "threshold": 0.8,
+      "net_profit": 196436281.96889734,
+      "approval_rate": 0.9539904763140481,
+      "approved_default_rate": 0.2149994332993313,
+      "n_rejected": 21276
+    },
+    {
+      "threshold": 0.82,
+      "net_profit": 177860159.8981011,
+      "approval_rate": 0.9668703749356654,
+      "approved_default_rate": 0.21925673106601118,
+      "n_rejected": 15320
+    },
+    {
+      "threshold": 0.84,
+      "net_profit": 159980185.29389763,
+      "approval_rate": 0.9779791793714021,
+      "approved_default_rate": 0.22301506048739284,
+      "n_rejected": 10183
+    },
+    {
+      "threshold": 0.86,
+      "net_profit": 140929145.85552907,
+      "approval_rate": 0.9866984122865063,
+      "approved_default_rate": 0.22634595364637555,
+      "n_rejected": 6151
+    },
+    {
+      "threshold": 0.88,
+      "net_profit": 124298393.06029606,
+      "approval_rate": 0.9930907864177188,
+      "approved_default_rate": 0.22901110769961086,
+      "n_rejected": 3195
+    },
+    {
+      "threshold": 0.9,
+      "net_profit": 111451756.81215549,
+      "approval_rate": 0.9972536146323953,
+      "approved_default_rate": 0.23090450953690292,
+      "n_rejected": 1270
+    },
+    {
+      "threshold": 0.92,
+      "net_profit": 103965203.9857018,
+      "approval_rate": 0.9992366346182957,
+      "approved_default_rate": 0.23189625881624765,
+      "n_rejected": 353
+    },
+    {
+      "threshold": 0.94,
+      "net_profit": 101081150.73583388,
+      "approval_rate": 0.9999178246897882,
+      "approved_default_rate": 0.23225083695943666,
+      "n_rejected": 38
+    },
+    {
+      "threshold": 0.96,
+      "net_profit": 100616383.97850299,
+      "approval_rate": 1.0,
+      "approved_default_rate": 0.23229878942793009,
+      "n_rejected": 0
+    },
+    {
+      "threshold": 0.98,
+      "net_profit": 100616383.97850299,
+      "approval_rate": 1.0,
+      "approved_default_rate": 0.23229878942793009,
+      "n_rejected": 0
+    }
+  ]
+}

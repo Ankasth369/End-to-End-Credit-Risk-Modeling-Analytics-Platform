@@ -1,0 +1,28 @@
+# Exclude everything in data/ by default -- it holds files up to 1.6GB that
+# are only needed to regenerate models via notebooks 01-03, not to serve them.
+# Then explicitly re-include only the two files the running app/API actually
+# read at runtime (Portfolio Analytics/calibration and Stress Testing).
+data/*
+!data/expected_loss_test_2016_2017.csv
+!data/test_fe.csv
+
+notebooks/
+tests/
+.git/
+.github/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+logs/
+mlruns/
+mlartifacts/
+mlflow.db
+monitoring_reports/
+*.log
+.claude/
+src/
+.gitignore
+.dockerignore
+README.md

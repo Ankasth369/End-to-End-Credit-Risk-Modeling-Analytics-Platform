@@ -1,0 +1,24 @@
+# Requires the metrics-server addon running in the cluster, or this will sit
+# with unknown targets and never scale. On minikube: `minikube addons enable
+# metrics-server`. On kind: metrics-server isn't bundled -- install it
+# separately (https://github.com/kubernetes-sigs/metrics-server) or skip this
+# resource for local testing and apply it only against a real cluster.
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: credit-risk-api
+  namespace: credit-risk
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: credit-risk-api
+  minReplicas: 2
+  maxReplicas: 6
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70

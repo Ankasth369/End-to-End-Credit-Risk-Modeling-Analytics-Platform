@@ -1,0 +1,13 @@
+# Non-secret configuration. Today's app.py/api.py only actually read
+# CREDIT_API_KEY (which is a secret -- see secret.yaml), so this ConfigMap is
+# intentionally small and illustrative rather than load-bearing. It's the
+# right place to add real config (log level, feature flags, model version
+# pin) as the service grows past a single static API key.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: credit-risk-config
+  namespace: credit-risk
+data:
+  ENVIRONMENT: "production"
+  LOG_LEVEL: "info"

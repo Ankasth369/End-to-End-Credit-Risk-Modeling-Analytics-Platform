@@ -1,0 +1,12 @@
+{
+  "population": "Test vintage 2016-2017, all loans",
+  "n_loans": 462426,
+  "total_exposure": 6661864075.0,
+  "total_expected_loss": 1855928334.3137803,
+  "el_rate": 0.2785899432080172,
+  "total_realized_loss": 1184049523.6668115,
+  "realized_loss_rate": 0.17773546718105496,
+  "pd_model": "XGBoost (AUC 0.7251)",
+  "ead_model": "Mean-by-term lookup",
+  "lgd_model": "LightGBM (R2 0.0095)"
+}

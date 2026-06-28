@@ -1,0 +1,12 @@
+{
+  "model": "Term Lookup (Mean EAD by Term)",
+  "test_mae": 0.17521440258019425,
+  "test_rmse": 0.20465706399109057,
+  "test_r2": -0.25465488126617664,
+  "test_wape": 0.2337858171263076,
+  "lookup": {
+    "36": 0.5804732715289598,
+    "60": 0.7348155329774531
+  },
+  "note": "Regression models (LR, RF, XGB, LGBM) all produced negative R2. Term-based mean is industry standard for unsecured consumer EAD."
+}

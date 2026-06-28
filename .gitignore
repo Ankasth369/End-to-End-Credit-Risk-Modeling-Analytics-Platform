@@ -1,0 +1,29 @@
+# Data — far too large for git (largest file is >1GB); regenerate via notebooks 01-03
+data/
+
+# Model binaries ARE committed (models/ is only ~24MB total) so CI can actually
+# load them to run tests. In a real deployment these would come from a proper
+# artifact store (S3, MLflow with a remote backend, DVC) rather than sitting in
+# git -- see model_registry.py for the versioning layer this project has instead.
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Logs and local artifacts
+logs/
+mlruns/
+mlartifacts/
+mlflow.db
+*.log
+
+# Environment / secrets
+.env
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+.ipynb_checkpoints/

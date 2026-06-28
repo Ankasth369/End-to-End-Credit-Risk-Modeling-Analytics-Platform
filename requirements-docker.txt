@@ -1,0 +1,18 @@
+# Slim runtime dependencies for serving (Streamlit app + FastAPI service) only.
+# Excludes training/notebook/dev-only tools (jupyter, notebook, optuna,
+# imbalanced-learn, mlflow, pytest, httpx) that requirements.txt includes for
+# the full development environment but the containers never import.
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
+xgboost>=2.0
+lightgbm>=4.0
+shap>=0.43
+matplotlib>=3.7
+plotly>=5.15
+streamlit>=1.28
+joblib>=1.3
+scipy>=1.11
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2.0
